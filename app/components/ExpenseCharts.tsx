@@ -72,7 +72,7 @@ export default function ExpenseCharts({ expenses }: Props) {
                 <Cell key={index} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
+            <Tooltip formatter={(value) => `$${Number(value).toFixed(2)}`} />
             <Legend />
           </PieChart>
         </ResponsiveContainer>
@@ -96,7 +96,7 @@ export default function ExpenseCharts({ expenses }: Props) {
               tickLine={false}
               tickFormatter={(v) => `$${v}`}
             />
-            <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
+            <Tooltip formatter={(value) => `$${Number(value).toFixed(2)}`} />
             <Bar dataKey="total" fill="#3b82f6" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
